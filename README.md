@@ -2,11 +2,11 @@
 The project is to help project teams that are not ready to use the new Docker Desktop subscription. 
 
 ## Background
-It wasn't that long ago that in order to run a Docker Enginer on a mac one had to setup their own virtual machine. When Docker Desktop arrived it made this process really easy by offering a one click solution. This repo is not going to provide a one click solution and it may not provide as an efficent method of running docker but hopefully it will help some project teams with the transition.  
+It wasn't that long ago that in order to run a Docker Engine on a mac one had to setup their own virtual machine. When Docker Desktop arrived it made this process really easy by offering a one click solution. This repo is not going to provide a one click solution and it may not provide as an efficent method of running docker but hopefully it will help some project teams with the transition.  
 
 ## Getting Started
 
-The first thing you need in to install some requierments. This project is currently setup with VirtualBox in mind but I think it could be adapted to other provides.
+The first thing you need is to install some requierments. This project is currently setup with VirtualBox in mind but I think it could be adapted to other provides.
 
 ### Install Virtual Box 6.1.x
 
