@@ -28,6 +28,13 @@ https://www.vagrantup.com/
 brew install --cask vagrant
 ```
 
+### Vagrant Plugin
+```
+vagrant plugin install vagrant-sshfs (optional)
+vagrant plugin install vagrant-notify-forwarder (optional but very useful for inotify to work)
+```
+
+
 ### Run the vagrant provisioning
 
 ```
@@ -66,3 +73,41 @@ http://localdocker:8080
 ```
 docker run --rm -it -v $(pwd)/webcode:/etc/nginx/sites -p 8080:80 nginx
 ```
+
+#### Docker Compose also works
+```
+docker-compose up
+docker-compose build
+```
+
+### Shared Folders
+
+#### Default Virtual Box Shared Folders
+The default way to share folders with docker is via Virtual Box shared folders. This method is not very efficiant and can be slow.
+
+#### SSHFS
+With an additional vagrant plugin you can use sshfs to share folders. This works better than the default shared folders but maybe not as well as SMB.  
+
+https://github.com/dustymabe/vagrant-sshfs
+
+
+#### SMB
+This might provide the most efficent experience between host and docker VM. This requries additional settings and you will be prompted for you password and SMB settings when first starting up or rebooting the VM.
+
+https://www.vagrantup.com/docs/synced-folders/smb
+
+```
+  # config.vm.synced_folder ENV["HOME"], ENV["HOME"]
+  # config.vm.synced_folder ENV["HOME"], ENV["HOME"], type: "sshfs"
+  config.vm.synced_folder ENV["HOME"], ENV["HOME"], type: "smb"
+```
+
+#### File Watcher (inotify)
+Many development tools use auto reload when source code is modified on the host. This is very useful for development so I recommend installing the additional plugin to forward host file notifications to the VM.  
+
+```
+vagrant plugin install vagrant-notify-forwarder
+```
+
+https://github.com/mhallin/vagrant-notify-forwarder
+
