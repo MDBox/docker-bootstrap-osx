@@ -92,7 +92,7 @@ https://github.com/dustymabe/vagrant-sshfs
 
 
 #### SMB
-This might provide the most efficent experience between host and docker VM. This requries additional settings and you will be prompted for you password and SMB settings when first starting up or rebooting the VM.
+This might provide the most efficent experience between host and docker VM. This requries additional settings and you will be prompted for your password and SMB settings when first starting up or rebooting the VM.
 
 https://www.vagrantup.com/docs/synced-folders/smb
 
